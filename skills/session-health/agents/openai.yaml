@@ -1,0 +1,4 @@
+interface:
+  display_name: "Session Health"
+  short_description: "Assess Codex session health and switch timing"
+  default_prompt: "Use $session-health to assess the current Codex session and recommend whether to continue or switch."

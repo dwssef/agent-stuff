@@ -1,0 +1,6 @@
+interface:
+  display_name: "Read Codex Sessions"
+  short_description: "Read exact local Codex session transcripts"
+  default_prompt: "Use $read-codex-sessions to read the specified local Codex session IDs, then answer my current request from that evidence."
+policy:
+  allow_implicit_invocation: false
