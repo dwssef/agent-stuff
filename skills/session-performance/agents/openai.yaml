@@ -1,0 +1,4 @@
+interface:
+  display_name: "Session Performance Monitor"
+  short_description: "Read-only Codex session latency and performance monitor"
+  default_prompt: "Use $session-performance to diagnose this Codex session and decide whether to continue or switch."
