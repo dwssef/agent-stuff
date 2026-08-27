@@ -20,6 +20,11 @@ Each line is an object with a top-level ISO `timestamp`, `type`, and usually `pa
 `response_item` types observed include `reasoning`, `message`, `custom_tool_call`,
 `custom_tool_call_output`, `function_call`, and `function_call_output`.
 
+The human-readable report prints the cumulative cache hit rate as `Cache hit X%` under `Tokens`.
+The JSON field `tokens.cache_hit_rate` is the ratio of cumulative
+`cached_input_tokens / input_tokens`; it should be rendered as a percentage when presented to a
+user.
+
 ## State DB
 
 Discover `state_*.sqlite` rather than hard-coding a number. The `threads` table currently includes:

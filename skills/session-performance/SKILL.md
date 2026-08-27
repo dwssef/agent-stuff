@@ -21,6 +21,12 @@ reports a neutral score with low confidence until a turn completes.
 When the current turn is still in flight, the text dashboard falls back to recent completed-turn
 agent-throughput and tool-execution aggregates while marking current-turn values unavailable.
 
+When presenting the result, always explicitly report the cache hit rate. In human-readable output,
+preserve the `Tokens` line containing `Cache hit X%`. In JSON output, read
+`tokens.cache_hit_rate`, convert the ratio to a percentage, and report it with its scope: this is
+the cumulative `cached_input_tokens / input_tokens` ratio for the session. If the value is `null`,
+report that the cache hit rate is unavailable; do not omit this field from the response.
+
 ## Interpretation
 
 - `task_complete.time_to_first_token_ms` is the best available completed-turn TTFT.
