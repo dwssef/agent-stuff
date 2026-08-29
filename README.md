@@ -1,7 +1,8 @@
 # Agent Stuff
 
-可复用的 agent skills 集合，当前包含适用于 Codex 工作流的三个 skill：
+可复用的 agent skills 集合，当前包含适用于 Codex 工作流的五个 skill：
 
+- `orchestrate`：跨项目协调 Codex 子代理，控制范围、生命周期、验证和失败边界。
 - `commit`：创建简洁、规范的 Conventional Commits 提交。
 - `session-health`：只读分析当前 Codex session 的健康度与上下文压力。
 - `session-performance`：只读分析 Codex session 的性能、延迟、吞吐与近期趋势。
@@ -25,7 +26,7 @@ npx -y skills add /home/czy/p/agent-stuff --skill commit
 
 ```bash
 npx -y skills add /home/czy/p/agent-stuff \
-  --skill commit session-health session-performance read-codex-sessions
+  --skill orchestrate commit session-health session-performance read-codex-sessions
 ```
 
 添加 `-g` 可以安装到用户级目录：
@@ -46,14 +47,14 @@ npx -y skills add https://github.com/dwssef/agent-stuff.git --skill commit
 
 ```bash
 npx -y skills add https://github.com/dwssef/agent-stuff.git \
-  --skill commit session-health session-performance read-codex-sessions
+  --skill orchestrate commit session-health session-performance read-codex-sessions
 ```
 
 只安装给 Codex 使用：
 
 ```bash
 npx -y skills add https://github.com/dwssef/agent-stuff.git \
-  --skill commit \
+  --skill orchestrate \
   --agent codex \
   --yes
 ```
@@ -62,7 +63,7 @@ npx -y skills add https://github.com/dwssef/agent-stuff.git \
 
 ```bash
 npx -y skills add https://github.com/dwssef/agent-stuff.git \
-  --skill commit \
+  --skill orchestrate \
   --agent codex \
   --global \
   --yes
@@ -79,7 +80,7 @@ repo_root=/home/czy/p/agent-stuff
 codex_skill_root="$HOME/.codex/skills"
 mkdir -p "$codex_skill_root"
 
-for skill in commit session-health session-performance read-codex-sessions; do
+for skill in orchestrate commit session-health session-performance read-codex-sessions; do
   repo_skill="$repo_root/skills/$skill"
   codex_skill="$codex_skill_root/$skill"
   test -d "$repo_skill"

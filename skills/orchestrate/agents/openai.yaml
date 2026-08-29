@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Orchestration"
+  short_description: "Coordinate agents with bounded scope and cost"
+  default_prompt: "Use $orchestrate to coordinate this task with bounded scope, ownership, and minimal verification."
