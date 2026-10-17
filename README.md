@@ -108,6 +108,32 @@ npx -y skills add https://github.com/dwssef/agent-stuff.git \
   --yes
 ```
 
+也可以用 `owner/repo` 简写，并重复 `--skill` 指定多个 skill：
+
+```bash
+npx -y skills@latest add dwssef/agent-stuff --skill commit --skill orchestrate
+```
+
+## 更新
+
+更新已安装的 skill 到最新版本：
+
+```bash
+npx -y skills@latest update commit orchestrate
+```
+
+只更新全局安装的 skill，在命令末尾加 `-g`：
+
+```bash
+npx -y skills@latest update commit orchestrate -g
+```
+
+只更新当前项目下的 skill，可加 `-p`：
+
+```bash
+npx -y skills@latest update commit orchestrate -p
+```
+
 ## 开发约定
 
 每个 skill 位于 `skills/<skill-name>/`，入口文件必须是 `SKILL.md`。脚本、测试和 agent 元数据应与对应的 skill 一起维护。
