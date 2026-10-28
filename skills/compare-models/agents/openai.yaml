@@ -1,0 +1,4 @@
+interface:
+  display_name: "Compare Models"
+  short_description: "比较模型价格、能力指数与任务成本"
+  default_prompt: "使用 $compare-models 对比我指定的模型性价比。"

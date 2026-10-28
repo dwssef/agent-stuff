@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub 一周工作总结"
+  short_description: "汇总个人及组织仓库过去七天提交，按项目简洁总结工作成果"
+  default_prompt: "使用 $github-weekly-summary，言简意赅总结我过去 7 天在 GitHub 上的工作内容。"
